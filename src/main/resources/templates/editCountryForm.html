@@ -1,0 +1,54 @@
+ <div  th:fragment="edit_country_form" class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit  country</h5>
+      </div>
+      <div class="modal-body">
+      <form  th:action="@{/updatecountry/{id}(id=${country.id})}" 
+  th:object="${country}"
+   method="post">
+      
+   <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <input th:value="${country.description}" name="description" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">Capital</label>
+    <input th:value="${country.capital}" name="capital" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">Code</label>
+    <input th:value="${country.code}" name="code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">Continent</label>
+    <input th:value="${country.continent}" name="continent" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">Nationality</label>
+    <input th:value="${country.nationality}" name="nationality" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+</form>
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>

@@ -42,6 +42,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public User(int id, String username, String password) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+	}
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 }
