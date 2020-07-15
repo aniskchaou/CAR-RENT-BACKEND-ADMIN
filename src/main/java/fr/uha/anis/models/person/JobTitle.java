@@ -1,4 +1,4 @@
-package fr.uha.anis.models.others;
+package fr.uha.anis.models.person;
 
 import javax.persistence.Entity;
 
@@ -10,9 +10,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper=false)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class JobTitle extends CommonObject {
+
+	public JobTitle() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public JobTitle(Integer id, String description, String details) {
+		super(id, description, details);
+		// TODO Auto-generated constructor stub
+	}
 
 }

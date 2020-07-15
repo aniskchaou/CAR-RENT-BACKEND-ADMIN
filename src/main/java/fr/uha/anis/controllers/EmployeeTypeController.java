@@ -4,11 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class JobTitleController {
+public class EmployeeTypeController {
 
-	@GetMapping("/jobtitle")
+	
+
+	@GetMapping("/employeetype")
 	public String index()
 	{
-		return "job_title";
+		return "employee_type";
 	}
 }

@@ -78,4 +78,6 @@ public class Vehicle {
 	private Integer locationid;
 	
 	private String remarks;	
+	
+	
 }

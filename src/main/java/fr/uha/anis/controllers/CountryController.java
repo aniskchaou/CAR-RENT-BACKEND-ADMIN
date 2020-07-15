@@ -3,6 +3,8 @@ package fr.uha.anis.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +35,7 @@ public class CountryController {
 	}
 	
 	@PostMapping("/addcountry")
+	
 	public String addCountry(Country country)
 	{
 		System.out.println(country.toString());
@@ -59,6 +62,7 @@ public class CountryController {
 	}
 	
 	@GetMapping("/deletecountry/{id}")
+	@Transactional
 	public String deleteCountry(@PathVariable("id") int id)
 	{
 		countryService.delete(id);

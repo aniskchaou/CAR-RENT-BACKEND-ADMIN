@@ -14,9 +14,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class State {
 	
@@ -90,6 +87,22 @@ public class State {
 	public void setDetails(String details) {
 		this.details = details;
 	}
+
+
 	
-	
+	public State(Integer id, String name, String capital, String code, Country country, Integer countryid,
+			String details) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.capital = capital;
+		this.code = code;
+		this.country = country;
+		this.countryid = countryid;
+		this.details = details;
+	}
+
+	public State() {
+		// TODO Auto-generated constructor stub
+	}
 }

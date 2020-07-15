@@ -2,6 +2,7 @@ package fr.uha.anis.models.country;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,11 +19,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Country {
 	
@@ -35,7 +31,7 @@ public class Country {
 	private String nationality;
 	private String continent;
 	
-	@OneToMany(mappedBy="country")
+	@OneToMany(mappedBy="country", cascade = CascadeType.REMOVE, orphanRemoval=true)
 	private List<State> states;
 
 	public Integer getId() {
@@ -93,7 +89,18 @@ public class Country {
 	public void setStates(List<State> states) {
 		this.states = states;
 	}
+
+	public Country(int id,String code, String capital, String description, String nationality, String continent) {
+		this.id=id;
+		this.code = code;
+		this.capital = capital;
+		this.description = description;
+		this.nationality = nationality;
+		this.continent = continent;
+	}
 	
-	
+	public Country() {
+		// TODO Auto-generated constructor stub
+	}
 	
 }

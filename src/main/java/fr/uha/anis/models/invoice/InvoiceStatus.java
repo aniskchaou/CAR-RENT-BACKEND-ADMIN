@@ -15,4 +15,14 @@ import lombok.EqualsAndHashCode;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class InvoiceStatus extends CommonObject {
 
+	public InvoiceStatus() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public InvoiceStatus(Integer id, String description, String details) {
+		super(id, description, details);
+		// TODO Auto-generated constructor stub
+	}
+
 }
