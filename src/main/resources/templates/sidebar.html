@@ -15,10 +15,9 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="form_component.html">Vehicule Data</a></li>
-              <li><a class="" href="form_validation.html">Maintenanace</a></li>
-               <li><a class="" href="form_validation.html">Mouvements</a></li>
-                <li><a class="" href="form_validation.html">Hires</a></li>
+              <li><a class="" th:href="@{/vehicules}">Vehicule Data</a></li>
+              <li><a class="" th:href="@{/vehiculemaintenance}">Maintenanace</a></li>
+                <li><a class="" th:href="@{/vehiculehire}">Hires</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -28,10 +27,9 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="general.html">Vehicule Make</a></li>
-              <li><a class="" href="buttons.html">Vehicule Types</a></li>
-              <li><a class="" href="grids.html">Vehicule Models</a></li>
-              <li><a class="" href="grids.html">Status Values</a></li>
+              <li><a class="" th:href="@{/vehiculetypes}">Vehicule Types</a></li>
+              <li><a class="" th:href="@{/vehiculemodels}">Vehicule Models</a></li>
+              <li><a class="" th:href="@{/vehiculestatus}">Status Values</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -41,11 +39,9 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="general.html">Employees</a></li>
-              <li><a class="" href="buttons.html">Clients</a></li>
-              <li><a class="" href="grids.html">Suppliers</a></li>
-              <li><a class="" href="grids.html">Contacts</a></li>
-              <li><a class="" href="grids.html">Users</a></li>
+              <li><a class="" th:href="@{/employees}">Employees</a></li>
+              <li><a class="" th:href="@{/clients}">Clients</a></li>
+              <li><a class="" th:href="@{/suppliers}">Suppliers</a></li>
             </ul>
           </li>
           
@@ -56,8 +52,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="general.html">Employees Types</a></li>
-              <li><a class="" href="buttons.html">Job Titles</a></li>
+              <li><a class="" th:href="@{/employeetypes}">Employees Types</a></li>
+              <li><a class="" th:href="@{jobtitles}">Job Titles</a></li>
               
             </ul>
           </li>
@@ -68,8 +64,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="general.html">Invoices</a></li>
-              <li><a class="" href="buttons.html">Invoices Status Values</a></li>
+              <li><a class="" th:href="@{/invoices}">Invoices</a></li>
+              <li><a class="" th:href="@{invoicestatus}">Invoices Status Values</a></li>
               
             </ul>
           </li>  

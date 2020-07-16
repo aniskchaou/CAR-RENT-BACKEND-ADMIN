@@ -37,6 +37,7 @@ import fr.uha.anis.repositories.StateRepository;
 import fr.uha.anis.repositories.SupplierRepository;
 import fr.uha.anis.repositories.UserRepository;
 import fr.uha.anis.repositories.VehiculeHireRepository;
+import fr.uha.anis.repositories.VehiculeMaintenanceRepository;
 import fr.uha.anis.repositories.VehiculeModelRepository;
 import fr.uha.anis.repositories.VehiculeRepository;
 import fr.uha.anis.repositories.VehiculeStatusRepository;
@@ -77,7 +78,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 	VehiculeRepository vehiculeRepository;
 	@Autowired
 	VehiculeHireRepository vehiculeHireRepository;
-	
+	@Autowired
+	VehiculeMaintenanceRepository  vehiculeMaintenanceRepository;
 	
 	@Override
 	public void initCounties() {
@@ -180,7 +182,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 	@Override
 	public void initVehiculeMaintenance() {
 		//VehiculeMaintenance vehiculeMaintenance=new VehiculeMaintenance(1,
-		
+		VehiculeMaintenance vehiculeMaintenance=new VehiculeMaintenance(1, vehiculeRepository.findById(1).get(), 1, new Date(), new Date(), 22.0, supplierRepository.findById(1).get(), 1, "");
+	    vehiculeMaintenanceRepository.save(vehiculeMaintenance);
 	}
 
 	@Override

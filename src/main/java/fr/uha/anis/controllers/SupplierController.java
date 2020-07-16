@@ -8,19 +8,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import fr.uha.anis.models.client.Client;
+import fr.uha.anis.models.client.Supplier;
 import fr.uha.anis.models.person.Employee;
 import fr.uha.anis.services.ClientService;
 import fr.uha.anis.services.EmployeeService;
+import fr.uha.anis.services.SupplierService;
 @Controller
-public class ClientController {
+public class SupplierController {
 	@Autowired
-	private ClientService clientService;
+	private SupplierService supplierService;
 	
-	@GetMapping("/clients")
-	public String getClients(Model model)
+	@GetMapping("/suppliers")
+	public String getSuppliers(Model model)
 	{
-		List<Client> clients=clientService.getClients();
-		model.addAttribute("clients", clients);
-		return "clients";
+		List<Supplier> suppliers=supplierService.getSuppliers();
+		model.addAttribute("suppliers", suppliers);
+		return "suppliers";
 	}
 }

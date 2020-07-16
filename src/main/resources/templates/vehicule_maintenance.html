@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>HR Settings</title>
+  <title>Vehicules</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -57,11 +57,11 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa fa-bars"></i>EMPLOYEES TYPES</h3>
+            <h3 class="page-header"><i class="fa fa fa-bars"></i> MAINTENANCE</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a th:href="@{/index}">Home</a></li>
-              <li>HR Settings</li>
-              <li>Employees Types</li>
+              <li>Vehicule</li>
+              <li>Maintenance</li>
             </ol>
           </div>
         </div>
@@ -71,19 +71,24 @@
        </button>
        <br><br>
         <section class="panel">
-             
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Description</th>
-                    <th>Details</th>
+                    <th>Vehicule</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Price</th>
+                    <th>Supplier</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr  th:each="employee:${employeetypes}">
-                    <td th:text="${employee.description}"></td>
-                    <td th:text="${employee.details}"></td>
-
+                  <tr  th:each="vehiculeMaintenance:${vehiculeMaintenances}">
+                    <td th:text="${vehiculeMaintenance.vehicle.name}"></td>
+                    <td th:text="${vehiculeMaintenance.startDate}"></td>
+                    <td th:text="${vehiculeMaintenance.endDate}"></td>
+                    <td th:text="${vehiculeMaintenance.price}"></td>
+                    <td th:text="${vehiculeMaintenance.supplier.name}"></td>
+                    
                   </tr>
                  
                 </tbody>

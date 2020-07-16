@@ -7,26 +7,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.uha.anis.models.client.Client;
+import fr.uha.anis.models.client.Supplier;
 import fr.uha.anis.models.country.Country;
 import fr.uha.anis.repositories.ClientRepository;
 import fr.uha.anis.repositories.CountryRepository;
+import fr.uha.anis.repositories.SupplierRepository;
 
 @Service
-public class ClientService {
+public class SupplierService {
 
 	@Autowired
-	private ClientRepository clientRepository;
+	private SupplierRepository  supplierRepository;
 	
 
 	
-	public List<Client> getClients()
+	public List<Supplier> getSuppliers()
 	{
-		return clientRepository.findAll();
+		return supplierRepository.findAll();
 	}
-	
 	public long getCount()
 	{
-		return clientRepository.count();
+		return supplierRepository.count();
 	}
 /*	
 	public void save(Country country)

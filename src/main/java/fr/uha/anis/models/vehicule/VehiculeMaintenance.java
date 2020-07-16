@@ -47,6 +47,9 @@ public class VehiculeMaintenance {
 	
 	private String remarks;
 
+	public VehiculeMaintenance() {
+		// TODO Auto-generated constructor stub
+	}
 	public VehiculeMaintenance(int id, Vehicule vehicle, Integer vehicleid, Date startDate, Date endDate, Double price,
 			Supplier supplier, Integer supplierid, String remarks) {
 		super();

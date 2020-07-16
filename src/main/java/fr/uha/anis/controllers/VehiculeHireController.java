@@ -9,20 +9,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import fr.uha.anis.models.vehicule.VehicleModel;
 import fr.uha.anis.models.vehicule.Vehicule;
+import fr.uha.anis.models.vehicule.VehiculeHire;
+import fr.uha.anis.services.VehiculeHireService;
 import fr.uha.anis.services.VehiculeModelService;
 import fr.uha.anis.services.VehiculeService;
 
 @Controller
-public class VehiculeController {
+public class VehiculeHireController {
 
 	@Autowired
-	private VehiculeService vehiculeService;
+	private VehiculeHireService vehiculeHireService;
 	
-	@GetMapping("/vehicules")
+	@GetMapping("/vehiculehire")
 	public String getVehicules(Model model)
 	{
-		List<Vehicule> vehicules=vehiculeService.getVehicules();
-		model.addAttribute("vehicules", vehicules);
-		return "vehicules";
+		List<VehiculeHire> vehiculehires=vehiculeHireService.getVehiculeHires();
+		model.addAttribute("vehiculehires", vehiculehires);
+		return "vehicule_hires";
 	}
 }

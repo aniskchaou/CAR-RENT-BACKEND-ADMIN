@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"> 
-  <title>Car Fleet</title>
+  <title>Car Fleet (Spring,Thymeleaf)</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="fa fa-home"></i><a th:href="@{/index}">Home</a></li>
               <li><i class="fa fa-laptop"></i>Dashboard</li>
             </ol>
           </div>
@@ -71,9 +71,9 @@
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box blue-bg">
-              <i class="fa fa-cloud-download"></i>
-              <div class="count">6.674</div>
-              <div class="title">Download</div>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <div class="count" th:text="${employee_nb}"></div>
+              <div class="title">Employees</div>
             </div>
             <!--/.info-box-->
           </div>
@@ -81,9 +81,9 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box brown-bg">
-              <i class="fa fa-shopping-cart"></i>
-              <div class="count">7.538</div>
-              <div class="title">Purchased</div>
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <div class="count" th:text="${client_nb}"></div>
+              <div class="title">Clients</div>
             </div>
             <!--/.info-box-->
           </div>
@@ -91,9 +91,9 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box dark-bg">
-              <i class="fa fa-thumbs-o-up"></i>
-              <div class="count">4.362</div>
-              <div class="title">Order</div>
+              <i class="fa fa-suitcase" aria-hidden="true"></i>
+              <div class="count" th:text="${supplier_nb}"></div>
+              <div class="title">Suppliers</div>
             </div>
             <!--/.info-box-->
           </div>
@@ -101,9 +101,9 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box green-bg">
-              <i class="fa fa-cubes"></i>
-              <div class="count">1.426</div>
-              <div class="title">Stock</div>
+                 <i class="fa fa-car" aria-hidden="true"></i>
+               <div class="count" th:text="${vehicule_nb}"></div>
+              <div class="title">Vehicules</div>
             </div>
             <!--/.info-box-->
           </div>

@@ -107,5 +107,7 @@ public class Invoice {
 		this.remarks = remarks;
 	}	
 	
-	
+	public Invoice() {
+		// TODO Auto-generated constructor stub
+	}
 }

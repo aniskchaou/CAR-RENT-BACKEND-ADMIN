@@ -8,25 +8,27 @@ import org.springframework.stereotype.Service;
 
 import fr.uha.anis.models.client.Client;
 import fr.uha.anis.models.country.Country;
+import fr.uha.anis.models.person.Employee;
 import fr.uha.anis.repositories.ClientRepository;
 import fr.uha.anis.repositories.CountryRepository;
+import fr.uha.anis.repositories.EmployeeRepository;
 
 @Service
-public class ClientService {
+public class EmployeeService {
 
 	@Autowired
-	private ClientRepository clientRepository;
+	private EmployeeRepository employeeRepository;
 	
 
 	
-	public List<Client> getClients()
+	public List<Employee> getEmployees()
 	{
-		return clientRepository.findAll();
+		return employeeRepository.findAll();
 	}
 	
 	public long getCount()
 	{
-		return clientRepository.count();
+		return employeeRepository.count();
 	}
 /*	
 	public void save(Country country)

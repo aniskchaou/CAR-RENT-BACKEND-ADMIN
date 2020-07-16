@@ -3,30 +3,32 @@ package fr.uha.anis.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import javax.transaction.Transactional;
 
-import fr.uha.anis.models.client.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import fr.uha.anis.models.country.Country;
-import fr.uha.anis.repositories.ClientRepository;
+import fr.uha.anis.models.invoice.Invoice;
+import fr.uha.anis.models.invoice.InvoiceStatus;
 import fr.uha.anis.repositories.CountryRepository;
+import fr.uha.anis.repositories.InvoiceStatusRepository;
+import fr.uha.anis.repositories.LocationRepository;
+import fr.uha.anis.repositories.StateRepository;
 
 @Service
-public class ClientService {
+public class InvoiceStatusService {
 
 	@Autowired
-	private ClientRepository clientRepository;
+	private InvoiceStatusRepository invoiceStatusRepository;
 	
 
 	
-	public List<Client> getClients()
+	public List<InvoiceStatus> getInvoices()
 	{
-		return clientRepository.findAll();
-	}
-	
-	public long getCount()
-	{
-		return clientRepository.count();
+		return invoiceStatusRepository.findAll();
 	}
 /*	
 	public void save(Country country)

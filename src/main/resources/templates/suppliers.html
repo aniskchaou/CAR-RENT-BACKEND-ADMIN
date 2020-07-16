@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Countries</title>
+  <title>People</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -57,10 +57,11 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa fa-bars"></i> COUNTRIES</h3>
+            <h3 class="page-header"><i class="fa fa fa-bars"></i> SUPPLIERS</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a th:href="@{/index}">Home</a></li>
-              <li><i class="fa fa-bars"></i>Countries</li>
+              <li>People</li>
+              <li>Suppliers</li>
             </ol>
           </div>
         </div>
@@ -70,28 +71,26 @@
        </button>
        <br><br>
         <section class="panel">
-             
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Code</th>
-                    <th>Description</th>
-                    <th>Capital</th>
-                    <th>Nationality</th>
-                    <th>Continent</th>
-                    <th>Actions</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>email</th>
+                    <th>Country</th>
+                    <th>State</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr  th:each="country:${countries}">
-                    <td th:text="${country.code}"></td>
-                    <td th:text="${country.description}"></td>
-                    <td th:text="${country.capital}"></td>
-                    <td th:text="${country.nationality}"></td>
-                    <td th:text="${country.continent}"></td>
-                    <td> <a type="button" class="btn btn-primary" th:href="@{/findbyid/{id}(id=${country.id}) }"><span class="fa fa-edit"></span></a>
-                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deletecountry/{id}(id=${country.id}) }"><span class="fa fa-trash"></span></a>
-                    </td>
+                  <tr  th:each="supplier:${suppliers}">
+                    <td th:text="${supplier.name}"></td>
+                    <td th:text="${supplier.address}"></td>
+                    <td th:text="${supplier.phone}"></td>
+                    <td th:text="${supplier.email}"></td>
+                    <td th:text="${supplier.country.description}"></td>
+                    <td th:text="${supplier.state.name}"></td>
+                    
                   </tr>
                  
                 </tbody>
