@@ -13,14 +13,14 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper=false)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class VehicleMake extends CommonObject {
+public class VehiculeType extends CommonObject {
 
-	public VehicleMake() {
+	public VehiculeType() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public VehicleMake(Integer id, String description, String details) {
+	public VehiculeType(Integer id, String description, String details) {
 		super(id, description, details);
 		// TODO Auto-generated constructor stub
 	}

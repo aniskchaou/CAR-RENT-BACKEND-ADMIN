@@ -117,6 +117,9 @@ public class Employee extends Person {
 		this.hireDate = hireDate;
 	}
 	
+	public Employee() {
+
 	
+	}
 	
 }

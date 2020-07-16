@@ -28,6 +28,23 @@ public class SpringCarFleetManagementApplication implements CommandLineRunner {
 		carFleetInit.initStates();
 		carFleetInit.initLocations();
 		carFleetInit.initUsers();
+		carFleetInit.initJobTitles();
+		carFleetInit.initVehiculeStatus();
+		carFleetInit.initVehiculeModel();
+		carFleetInit.initVehiculeType();
+		carFleetInit.initEmployeeTypes();
+		carFleetInit.initEmployees();
+		carFleetInit.initClients();
+		carFleetInit.initVehicules();
+		carFleetInit.initVehiculehire();
+		//carFleetInit.initVehiculeMaintenance();
+	
+		//carFleetInit.initInvoiceStatus();
+		//carFleetInit.initInvoices();
+		
+		carFleetInit.initSuppliers();
+		
+		
 	}
 	
 	

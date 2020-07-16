@@ -63,7 +63,9 @@ public class Client {
 		this.stateid = stateid;
 		this.details = details;
 	}
-
+    public Client() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getId() {
 		return id;
 	}

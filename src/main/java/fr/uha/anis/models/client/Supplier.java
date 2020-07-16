@@ -168,5 +168,7 @@ public class Supplier {
 		this.details = details;
 	}
 	
-	
+	public Supplier() {
+		// TODO Auto-generated constructor stub
+	}
 }

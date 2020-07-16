@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class VehicleMaintenance {
+public class VehiculeMaintenance {
 		
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class VehicleMaintenance {
 	
 	@ManyToOne
 	@JoinColumn(name="vehicleid", insertable=false, updatable=false)
-	private Vehicle vehicle;
+	private Vehicule vehicule;
 	private Integer vehicleid;
 	
 	private Date startDate;
@@ -47,11 +47,11 @@ public class VehicleMaintenance {
 	
 	private String remarks;
 
-	public VehicleMaintenance(int id, Vehicle vehicle, Integer vehicleid, Date startDate, Date endDate, Double price,
+	public VehiculeMaintenance(int id, Vehicule vehicle, Integer vehicleid, Date startDate, Date endDate, Double price,
 			Supplier supplier, Integer supplierid, String remarks) {
 		super();
 		this.id = id;
-		this.vehicle = vehicle;
+		this.vehicule = vehicle;
 		this.vehicleid = vehicleid;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -69,12 +69,12 @@ public class VehicleMaintenance {
 		this.id = id;
 	}
 
-	public Vehicle getVehicle() {
-		return vehicle;
+	public Vehicule getVehicle() {
+		return vehicule;
 	}
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
+	public void setVehicle(Vehicule vehicle) {
+		this.vehicule = vehicle;
 	}
 
 	public Integer getVehicleid() {

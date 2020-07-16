@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.uha.anis.models.client.Client;
+import fr.uha.anis.models.client.Supplier;
 import fr.uha.anis.models.country.Country;
 import fr.uha.anis.models.country.Location;
 import fr.uha.anis.models.country.State;
@@ -18,15 +19,28 @@ import fr.uha.anis.models.person.Employee;
 import fr.uha.anis.models.person.EmployeeType;
 import fr.uha.anis.models.person.JobTitle;
 import fr.uha.anis.models.user.User;
+import fr.uha.anis.models.vehicule.VehicleModel;
+import fr.uha.anis.models.vehicule.VehicleStatus;
+import fr.uha.anis.models.vehicule.Vehicule;
+import fr.uha.anis.models.vehicule.VehiculeHire;
+import fr.uha.anis.models.vehicule.VehiculeMaintenance;
+import fr.uha.anis.models.vehicule.VehiculeType;
 import fr.uha.anis.repositories.ClientRepository;
 import fr.uha.anis.repositories.CountryRepository;
+import fr.uha.anis.repositories.EmployeeRepository;
 import fr.uha.anis.repositories.EmployeeTypeRepository;
 import fr.uha.anis.repositories.InvoiceRepository;
 import fr.uha.anis.repositories.InvoiceStatusRepository;
 import fr.uha.anis.repositories.JobTitleRepository;
 import fr.uha.anis.repositories.LocationRepository;
 import fr.uha.anis.repositories.StateRepository;
+import fr.uha.anis.repositories.SupplierRepository;
 import fr.uha.anis.repositories.UserRepository;
+import fr.uha.anis.repositories.VehiculeHireRepository;
+import fr.uha.anis.repositories.VehiculeModelRepository;
+import fr.uha.anis.repositories.VehiculeRepository;
+import fr.uha.anis.repositories.VehiculeStatusRepository;
+import fr.uha.anis.repositories.VehiculeTypeRepository;
 @Service
 @Transactional
 public class CarFleetInitDB implements ICarFleetInit{
@@ -49,6 +63,20 @@ public class CarFleetInitDB implements ICarFleetInit{
 	JobTitleRepository jobTitleRepository;
 	@Autowired
 	EmployeeTypeRepository  employeeTypeRepository;
+	@Autowired
+	SupplierRepository supplierRepository;
+	@Autowired
+	VehiculeModelRepository vehiculeModelRepository;
+	@Autowired
+	VehiculeStatusRepository vehiculeStatusRepository;
+	@Autowired
+	VehiculeTypeRepository  vehiculeTypeRepository;
+	@Autowired
+	EmployeeRepository  employeeRepository;
+	@Autowired
+	VehiculeRepository vehiculeRepository;
+	@Autowired
+	VehiculeHireRepository vehiculeHireRepository;
 	
 	
 	@Override
@@ -75,8 +103,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 
 	@Override
 	public void initLocations() {
-		Location location=new Location(1, "", "", countryRepository.findById(1).get(),1, stateRepository.findById(1).get(),1, "New York", "");
-		locationRepository.save(location);
+		Location locatio=new Location(1, "", "", countryRepository.findById(1).get(),1, stateRepository.findById(1).get(),1, "New York", "");
+		locationRepository.save(locatio);
 	}
 
 	@Override
@@ -108,8 +136,13 @@ public class CarFleetInitDB implements ICarFleetInit{
 
 	@Override
 	public void initEmployees() {
-		//Employee emp1=new Employee(1, "", lastname, othername, title, initials, socialSecurityNumber, gender, maritalStatus, country, countryid, state, stateid, dateOfBirth, city, address, phone, mobile, email, photo, employeeType, employeetypeid, photo2, username, jobTitle, jobtitleid, hireDate)
-		//Employee emp2=new Employee(1, "", lastname, othername, title, initials, socialSecurityNumber, gender, maritalStatus, country, countryid, state, stateid, dateOfBirth, city, address, phone, mobile, email, photo, employeeType, employeetypeid, photo2, username, jobTitle, jobtitleid, hireDate)
+		Employee emp1=new Employee(1, "", "Bud Y. ", "Farmer", 
+				"worker", "", "9G979H8G", "Male", "married",
+				countryRepository.findById(2).get(), 2, stateRepository.findById(1).get(), 
+				2, new Date(), "Oakland", "2885 Station Street\r\n Oakland, CA 94612", "133434", "31431341",
+				"bud.farmer@gmail.com", "bud.jpg", employeeTypeRepository.findById(1).get(), 1, "",
+				"", jobTitleRepository.findById(1).get(), 1, new Date());
+		employeeRepository.save(emp1);
 	}
 
 	@Override
@@ -120,7 +153,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 
 	@Override
 	public void initSuppliers() {
-		// TODO Auto-generated method stub
+		Supplier supplier=new Supplier(1, "Donald M. Ellis", "651 Lilac Lane Darien, GA 31305", "California", "13434134", "4232352", "www.google.com", "dobald.ellis@gmail.com", countryRepository.findById(2).get(), 2, stateRepository.findById(2).get(), 2, "");
+		supplierRepository.save(supplier);
 		
 	}
 
@@ -142,5 +176,55 @@ public class CarFleetInitDB implements ICarFleetInit{
 		Invoice invoice=new Invoice(1, new Date(), invoiceStatusRepository.findById(1).get(), 1, clientRepository.findById(1).get(), 1, "");
 		invoiceRepository.save(invoice);
 	}
+
+	@Override
+	public void initVehiculeMaintenance() {
+		//VehiculeMaintenance vehiculeMaintenance=new VehiculeMaintenance(1,
+		
+	}
+
+	@Override
+	public void initVehiculeModel() {
+		// TODO Auto-generated method stub
+		VehicleModel vehiculeModel=new VehicleModel(1, "Toyota", "");
+		vehiculeModelRepository.save(vehiculeModel);
+	}
+
+	@Override
+	public void initVehiculeStatus() {
+		VehicleStatus vehiculeStatus=new VehicleStatus(1,"good","");
+		VehicleStatus vehiculeStatus2=new VehicleStatus(2,"bad","");
+		vehiculeStatusRepository.save(vehiculeStatus);
+		vehiculeStatusRepository.save(vehiculeStatus2);
+		
+	}
+
+	@Override
+	public void initVehiculeType() {
+     VehiculeType vehiculeType=new VehiculeType(1, "sedan", "");
+     VehiculeType vehiculeType2=new VehiculeType(2, "hatchback", "");
+     vehiculeTypeRepository.save(vehiculeType);
+     vehiculeTypeRepository.save(vehiculeType2);
+	}
+
+	@Override
+	public void initVehicules() {
+		// TODO Auto-generated method stub
+		Vehicule v=new Vehicule(1, "Toyota", vehiculeTypeRepository.findById(1).get(),
+				1, "32D2D22", new Date(), new Date(), "", "", "",
+				vehiculeStatusRepository.findById(1).get(), 1, "22", employeeRepository.findById(1).get(), 
+				1, vehiculeModelRepository.findById(1).get(), 1,
+				locationRepository.findById(1).get(), 1, "");
+		vehiculeRepository.save(v);
+	}
+
+	@Override
+	public void initVehiculehire() {
+		// TODO Auto-generated method stub
+		VehiculeHire vehiculeHire=new VehiculeHire(1, vehiculeRepository.findById(1).get(), 1, new Date(), new Date(), new Date(), new Date(), clientRepository.findById(1).get(),1, locationRepository.findById(1).get(), 1, 33.3, "");
+		vehiculeHireRepository.save(vehiculeHire);
+	}
+
+	
 
 }
