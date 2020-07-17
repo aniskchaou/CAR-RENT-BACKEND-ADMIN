@@ -77,8 +77,7 @@
 					data-target="#exampleModal">
 					<span class="fa fa-plus"></span>
 				</button>
-				<br>
-				<br>
+				<br> <br>
 				<section class="panel">
 					<table class="table table-striped">
 						<thead>
@@ -94,16 +93,16 @@
 						<tbody>
 							<tr th:each="vehiculeMaintenance:${vehiculeMaintenances}">
 								<td th:text="${vehiculeMaintenance.vehicle.name}"></td>
-								<td th:text="${vehiculeMaintenance.startDate}"></td>
-								<td th:text="${vehiculeMaintenance.endDate}"></td>
-								<td th:text="${vehiculeMaintenance.price}"></td>
+								<td th:text="${ #dates.format(vehiculeMaintenance.startDate, 'dd-MMM-yyyy')}"></td>
+								<td th:text="${ #dates.format(vehiculeMaintenance.endDate, 'dd-MMM-yyyy') }"></td>
+								<td th:text="${vehiculeMaintenance.price}+' $'">$</td>
 								<td th:text="${vehiculeMaintenance.supplier.name}"></td>
 								<td><a type="button" class="btn btn-primary"
 									th:href="@{/vehiculemaintenance/{id}(id=${vehiculeMaintenance.id}) }"><span
 										class="fa fa-edit"></span></a> <a type="button"
 									onclick="return confirm('Are you sure?') ? true : false;"
 									class="btn btn-danger"
-									th:href="@{/deletecountry/{id}(id=${vehiculeMaintenance.id}) }"><span
+									th:href="@{/deletevehiculemaintenance/{id}(id=${vehiculeMaintenance.id}) }"><span
 										class="fa fa-trash"></span></a></td>
 							</tr>
 

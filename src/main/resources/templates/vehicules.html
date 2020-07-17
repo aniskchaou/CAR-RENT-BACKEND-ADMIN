@@ -96,7 +96,7 @@
 							<tr th:each="vehicule:${vehicules}">
 								<td th:text="${vehicule.name}"></td>
 								<td th:text="${vehicule.vehicleType.description}"></td>
-								<td th:text="${vehicule.registrationDate}"></td>
+								<td th:text="${ #dates.format(vehicule.registrationDate, 'dd-MMM-yyyy')}"></td>
 								<td th:text="${vehicule.vehicleStatus.description}"></td>
 								<td th:text="${vehicule.vehicleModel.description}"></td>
 								<td th:text="${vehicule.currentLocation.description}"></td>
@@ -105,7 +105,7 @@
 										class="fa fa-edit"></span></a> <a type="button"
 									onclick="return confirm('Are you sure?') ? true : false;"
 									class="btn btn-danger"
-									th:href="@{/deletecountry/{id}(id=${vehicule.id}) }"><span
+									th:href="@{/deletevehicule/{id}(id=${vehicule.id}) }"><span
 										class="fa fa-trash"></span></a></td>
 							</tr>
 

@@ -52,4 +52,8 @@ public class InvoiceService {
 		// TODO Auto-generated method stub
 		return invoiceRepository.findById(id).get();
 	}
+
+	public void delete(int id) {
+         invoiceRepository.delete(invoiceRepository.findById(id).get());		
+	}
 }

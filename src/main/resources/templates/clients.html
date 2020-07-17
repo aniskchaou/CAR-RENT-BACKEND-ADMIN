@@ -92,7 +92,7 @@
                     <td th:text="${client.country.description}"></td>
                     <td th:text="${client.state.name}"></td>
                     <td> <a type="button" class="btn btn-primary" th:href="@{/client/{id}(id=${client.id}) }"><span class="fa fa-edit"></span></a>
-                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deletecountry/{id}(id=${client.id}) }"><span class="fa fa-trash"></span></a>
+                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deleteclient/{id}(id=${client.id}) }"><span class="fa fa-trash"></span></a>
                     </td>
                   </tr>
                  

@@ -51,4 +51,9 @@ public class VehiculeMaintenanceService {
 		
 	}
 */
+
+	public void delete(int id) {
+		vehiculeMaintenanceRepository.delete(vehiculeMaintenanceRepository.findById(id).get());
+		
+	}
 }

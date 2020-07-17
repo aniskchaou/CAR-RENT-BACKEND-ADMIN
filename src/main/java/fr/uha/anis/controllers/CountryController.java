@@ -36,9 +36,8 @@ public class CountryController {
 	
 	@PostMapping("/addcountry")
 	
-	public String addCountry(Country country)
+	public String addCountry(Country country,Model model)
 	{
-		System.out.println(country.toString());
 		countryService.save(country);
 		return "redirect:/countries";
 	}
@@ -49,6 +48,7 @@ public class CountryController {
 		
 	 Country country=countryService.findById(id).get();
 	 model.addAttribute("country", country);
+
 	 return "editCountry";
 	}
 	

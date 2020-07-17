@@ -56,4 +56,9 @@ public class VehiculeHireService {
 		// TODO Auto-generated method stub
 		return vehiculeHireRepository.findById(id);
 	}
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		vehiculeHireRepository.delete(vehiculeHireRepository.findById(id).get());
+	}
 }

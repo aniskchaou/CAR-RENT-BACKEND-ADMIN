@@ -2,6 +2,8 @@ package fr.uha.anis.controllers;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,7 +57,7 @@ public class VehiculeMaintenanceController {
 		vehiculeMaintenanceService.save(vehiculeMaintenance);
 		return "redirect:/vehiculemaintenance";
 	}
-	
+
 	@RequestMapping("/vehiculemaintenance/{id}")
 	public String findById(@PathVariable("id") int id, Model model) {
 		VehiculeMaintenance vehiculeMaintenance = vehiculeMaintenanceService.findById(id).get();
@@ -68,12 +70,19 @@ public class VehiculeMaintenanceController {
 		model.addAttribute("suppliers", suppliers);
 		return "editMaintenance";
 	}
-	
+
 	@PostMapping("/updatevehiculemaintenance/{id}")
-	public String updateCountry(@PathVariable("id") long id, @Validated VehiculeMaintenance vehicule, BindingResult result,
-			Model model) {
+	public String updateCountry(@PathVariable("id") long id, @Validated VehiculeMaintenance vehicule,
+			BindingResult result, Model model) {
 
 		vehiculeMaintenanceService.save(vehicule);
+		return "redirect:/vehiculemaintenance";
+	}
+
+	@GetMapping("/deletevehiculemaintenance/{id}")
+	@Transactional
+	public String deleteCountry(@PathVariable("id") int id) {
+		vehiculeMaintenanceService.delete(id);
 		return "redirect:/vehiculemaintenance";
 	}
 }

@@ -69,11 +69,13 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h3 class="page-header">
-							<i class="fa fa-laptop"></i> Dashboard
+							<i class="fa fa-laptop"></i> VEHICULES
 						</h3>
 						<ol class="breadcrumb">
 							<li><i class="fa fa-home"></i><a th:href="@{/index}">Home</a></li>
-							<li><i class="fa fa-laptop"></i>Dashboard</li>
+							<li><i class="fa fa-list"></i>Vehicule</li>
+							<li>Edit</li>
+							
 						</ol>
 					</div>
 				</div>
@@ -121,13 +123,13 @@
 						</div>
 
 						<div class="form-group">
-							<label for="exampleInputEmail1">Power</label> <input name="power"
+							<label for="exampleInputEmail1">Power (Hp)</label> <input name="power"
 								type="number" class="form-control" id="exampleInputEmail1"
 								aria-describedby="emailHelp" placeholder="Power" th:value="${vehicule.power}">
 						</div>
 
 						<div class="form-group">
-							<label for="exampleInputEmail1">Fuel Capacity</label> <input
+							<label for="exampleInputEmail1">Fuel Capacity (Litres)</label> <input
 								name="fuelCapacity" type="number" class="form-control"
 								id="exampleInputEmail1" aria-describedby="emailHelp"
 								placeholder="Power" th:value="${vehicule.fuelCapacity}">
@@ -143,7 +145,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="exampleInputEmail1">Net Weight</label> <input
+							<label for="exampleInputEmail1">Net Weight (Kg)</label> <input
 								name="netWeight" type="number" class="form-control"
 								id="exampleInputEmail1" aria-describedby="emailHelp"
 								placeholder="Net Weight" th:value="${vehicule.netWeight}">

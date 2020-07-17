@@ -51,4 +51,9 @@ public class ClientService {
 		// TODO Auto-generated method stub
 		return clientRepository.findById(id);
 	}
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		clientRepository.delete(clientRepository.findById(id).get());
+	}
 }

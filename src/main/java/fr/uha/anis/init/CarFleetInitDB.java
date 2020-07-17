@@ -93,8 +93,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 	@Override
 	public void initStates() {
 		
-			State state=new State(1,"Ile de France", "Paris", "0OAE", countryRepository.findById(1).get(),1, "");
-			State state2=new State(2,"New York", "New York", "03DAE", countryRepository.findById(2).get(),2, "");
+			State state=new State(1,"Ile de France", "Paris", "0OAE", countryRepository.findById(1).get(),1, "none");
+			State state2=new State(2,"New York", "New York", "03DAE", countryRepository.findById(2).get(),2, "none");
 			stateRepository.save(state);
 			stateRepository.save(state2);
 			
@@ -105,22 +105,22 @@ public class CarFleetInitDB implements ICarFleetInit{
 
 	@Override
 	public void initLocations() {
-		Location locatio=new Location(1, "", "", countryRepository.findById(1).get(),1, stateRepository.findById(1).get(),1, "New York", "");
+		Location locatio=new Location(1, "New York", "New York", countryRepository.findById(1).get(),1, stateRepository.findById(1).get(),1, "New York", "");
 		locationRepository.save(locatio);
 	}
 
 	@Override
 	public void initUsers() {
 	User user =new User(1, "admin", "admin");
-	User user2 =new User(1, "user", "user");
+	User user2 =new User(2, "user", "user");
 	userRepository.save(user);
 	userRepository.save(user2);
 	}
 
 	@Override
 	public void initEmployeeTypes() {
-	   EmployeeType employeeType1=new EmployeeType(1,"Full-Time","");
-	   EmployeeType employeeType2=new EmployeeType(2,"Part-Time","");
+	   EmployeeType employeeType1=new EmployeeType(1,"Full-Time","Full-Time");
+	   EmployeeType employeeType2=new EmployeeType(2,"Part-Time","Part-Time");
 	   employeeTypeRepository.save(employeeType1);
 	   employeeTypeRepository.save(employeeType2);
 	}
@@ -130,8 +130,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 		// TODO Auto-generated method stub
 		
 		
-		JobTitle jobTitle=new JobTitle(1, "Manager", "");
-		JobTitle jobTitle2=new JobTitle(2, "Executive", "");
+		JobTitle jobTitle=new JobTitle(1, "Manager", "Manager");
+		JobTitle jobTitle2=new JobTitle(2, "Executive", "Executive");
 		jobTitleRepository.save(jobTitle);
 		jobTitleRepository.save(jobTitle2);
 	}
@@ -155,7 +155,7 @@ public class CarFleetInitDB implements ICarFleetInit{
 
 	@Override
 	public void initSuppliers() {
-		Supplier supplier=new Supplier(1, "Donald M. Ellis", "651 Lilac Lane Darien, GA 31305", "California", "13434134", "4232352", "www.google.com", "dobald.ellis@gmail.com", countryRepository.findById(2).get(), 2, stateRepository.findById(2).get(), 2, "");
+		Supplier supplier=new Supplier(1, "Donald M. Ellis", "651 Lilac Lane Darien, GA 31305", "California", "13434134", "4232352", "www.google.com", "dobald.ellis@gmail.com", countryRepository.findById(2).get(), 2, stateRepository.findById(2).get(), 2, "none");
 		supplierRepository.save(supplier);
 		
 	}
@@ -163,40 +163,42 @@ public class CarFleetInitDB implements ICarFleetInit{
 	@Override
 	public void initClients() {
 		Client c=new Client(1, "Christopher F. Neal", "75 Stadium Drive\r\n" + 
-				"Franklin, MA 02038", "New york", "0989870997", "8786585765", "", "n.f@test.us", countryRepository.findById(1).get(), 1, stateRepository.findById(1).get(), 1, "");
+				"Franklin, MA 02038", "New york", "0989870997", "8786585765", "", "n.f@test.us", countryRepository.findById(1).get(), 1, stateRepository.findById(1).get(), 1, "none");
 		clientRepository.save(c);
 	}
 
 	@Override
 	public void initInvoiceStatus() {
-		InvoiceStatus invoiceStatus=new InvoiceStatus(1, "valid", "");
+		InvoiceStatus invoiceStatus=new InvoiceStatus(1, "Valid", "none");
+		InvoiceStatus invoiceStatus2=new InvoiceStatus(2, "Expired", "none");
 		invoiceStatusRepository.save(invoiceStatus);
+		invoiceStatusRepository.save(invoiceStatus2);
 	}
 
 	@Override
 	public void initInvoices() {
-		Invoice invoice=new Invoice(1, new Date(), invoiceStatusRepository.findById(1).get(), 1, clientRepository.findById(1).get(), 1, "");
+		Invoice invoice=new Invoice(1, new Date(), invoiceStatusRepository.findById(1).get(), 1, clientRepository.findById(1).get(), 1, "none");
 		invoiceRepository.save(invoice);
 	}
 
 	@Override
 	public void initVehiculeMaintenance() {
 		//VehiculeMaintenance vehiculeMaintenance=new VehiculeMaintenance(1,
-		VehiculeMaintenance vehiculeMaintenance=new VehiculeMaintenance(1, vehiculeRepository.findById(1).get(), 1, new Date(), new Date(), 22.0, supplierRepository.findById(1).get(), 1, "");
+		VehiculeMaintenance vehiculeMaintenance=new VehiculeMaintenance(1, vehiculeRepository.findById(1).get(), 1, new Date(), new Date(), 22.0, supplierRepository.findById(1).get(), 1, "none");
 	    vehiculeMaintenanceRepository.save(vehiculeMaintenance);
 	}
 
 	@Override
 	public void initVehiculeModel() {
 		// TODO Auto-generated method stub
-		VehicleModel vehiculeModel=new VehicleModel(1, "Toyota", "");
+		VehicleModel vehiculeModel=new VehicleModel(1, "Toyota", "Toyota");
 		vehiculeModelRepository.save(vehiculeModel);
 	}
 
 	@Override
 	public void initVehiculeStatus() {
-		VehicleStatus vehiculeStatus=new VehicleStatus(1,"good","");
-		VehicleStatus vehiculeStatus2=new VehicleStatus(2,"bad","");
+		VehicleStatus vehiculeStatus=new VehicleStatus(1,"Good","Good");
+		VehicleStatus vehiculeStatus2=new VehicleStatus(2,"Bad","Bad");
 		vehiculeStatusRepository.save(vehiculeStatus);
 		vehiculeStatusRepository.save(vehiculeStatus2);
 		
@@ -204,8 +206,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 
 	@Override
 	public void initVehiculeType() {
-     VehiculeType vehiculeType=new VehiculeType(1, "sedan", "");
-     VehiculeType vehiculeType2=new VehiculeType(2, "hatchback", "");
+     VehiculeType vehiculeType=new VehiculeType(1, "Sedan", "Sedan");
+     VehiculeType vehiculeType2=new VehiculeType(2, "Hatchback", "Hatchback");
      vehiculeTypeRepository.save(vehiculeType);
      vehiculeTypeRepository.save(vehiculeType2);
 	}
@@ -217,14 +219,14 @@ public class CarFleetInitDB implements ICarFleetInit{
 				1, "32D2D22", new Date(), new Date(), "", "", "",
 				vehiculeStatusRepository.findById(1).get(), 1, "22", employeeRepository.findById(1).get(), 
 				1, vehiculeModelRepository.findById(1).get(), 1,
-				locationRepository.findById(1).get(), 1, "");
+				locationRepository.findById(1).get(), 1, "none");
 		vehiculeRepository.save(v);
 	}
 
 	@Override
 	public void initVehiculehire() {
 		// TODO Auto-generated method stub
-		VehiculeHire vehiculeHire=new VehiculeHire(1, vehiculeRepository.findById(1).get(), 1, new Date(), new Date(), new Date(), new Date(), clientRepository.findById(1).get(),1, locationRepository.findById(1).get(), 1, 33.3, "");
+		VehiculeHire vehiculeHire=new VehiculeHire(1, vehiculeRepository.findById(1).get(), 1, new Date(), new Date(), new Date(), new Date(), clientRepository.findById(1).get(),1, locationRepository.findById(1).get(), 1, 33.3, "none");
 		vehiculeHireRepository.save(vehiculeHire);
 	}
 

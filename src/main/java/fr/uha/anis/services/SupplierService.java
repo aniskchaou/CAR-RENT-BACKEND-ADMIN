@@ -47,4 +47,8 @@ public class SupplierService {
 		
 	}
 */
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		supplierRepository.delete(supplierRepository.findById(id).get());
+	}
 }

@@ -84,12 +84,12 @@
                 </thead>
                 <tbody>
                   <tr  th:each="invoice:${invoices}">
-                    <td th:text="${invoice.invoiceDate}"></td>
+                    <td th:text="${ #dates.format(invoice.invoiceDate, 'dd-MMM-yyyy')}"></td>
                     <td th:text="${invoice.invoiceStatus.description}"></td>
                     <td th:text="${invoice.client.name}"></td>
                     <td th:text="${invoice.remarks}"></td>
                     <td> <a type="button" class="btn btn-primary" th:href="@{/invoice/{id}(id=${invoice.id}) }"><span class="fa fa-edit"></span></a>
-                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deletecountry/{id}(id=${invoice.id}) }"><span class="fa fa-trash"></span></a>
+                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deleteinvoice/{id}(id=${invoice.id}) }"><span class="fa fa-trash"></span></a>
                     </td>
                   </tr>
                  

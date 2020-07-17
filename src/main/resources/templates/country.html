@@ -91,7 +91,6 @@
                     <td th:text="${country.nationality}"></td>
                     <td th:text="${country.continent}"></td>
                     <td> <a type="button" class="btn btn-primary" th:href="@{/findbyid/{id}(id=${country.id}) }"><span class="fa fa-edit"></span></a>
-                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deletecountry/{id}(id=${country.id}) }"><span class="fa fa-trash"></span></a>
                     </td>
                   </tr>
                  

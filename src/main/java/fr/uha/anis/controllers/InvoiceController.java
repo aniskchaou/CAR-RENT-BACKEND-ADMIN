@@ -2,6 +2,8 @@ package fr.uha.anis.controllers;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,5 +75,13 @@ public class InvoiceController {
 		
 		invoiceService.save(invoice);
 		return "redirect:/invoices";
+	}
+	
+	@GetMapping("/deleteinvoice/{id}")
+	@Transactional
+	public String deleteCountry(@PathVariable("id") int id)
+	{
+		invoiceService.delete(id);
+		return  "redirect:/invoices";
 	}
 }

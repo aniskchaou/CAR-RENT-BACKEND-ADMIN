@@ -95,10 +95,10 @@ public class VehiculeController {
 		vehiculeService.save(vehicule);
 		return "redirect:/vehicules";
 	}
-//	@GetMapping("/deletevehicule/{id}")
-//	@Transactional
-//	public String deleteCountry(@PathVariable("id") int id) {
-//		vehiculeService.delete(id);
-//		return "redirect:/vehicules";
-//	}
+	@GetMapping("/deletevehicule/{id}")
+	@Transactional
+	public String deleteCountry(@PathVariable("id") int id) {
+		vehiculeService.delete(id);
+		return "redirect:/vehicules";
+	}
 }

@@ -87,17 +87,17 @@
                 <tbody>
                   <tr  th:each="vehiculehire:${vehiculehires}">
                     <td th:text="${vehiculehire.vehicle.name}"></td>
-                    <td th:text="${vehiculehire.dateIn}"></td>
-                      <td th:text="${vehiculehire.dateOut}"></td>
+                    <td th:text="${ #dates.format(vehiculehire.dateIn, 'dd-MMM-yyyy')}"></td>
+                      <td th:text="${ #dates.format(vehiculehire.dateOut, 'dd-MMM-yyyy')}"></td>
                     <td th:text="${vehiculehire.client.name}"></td>
                       <td th:text="${vehiculehire.location.city}"></td>
-                    <td th:text="${vehiculehire.price}"></td>
+                    <td th:text="${vehiculehire.price}+' $'"></td>
                     <td><a type="button" class="btn btn-primary"
 									th:href="@{/vehiculehire/{id}(id=${vehiculehire.id}) }"><span
 										class="fa fa-edit"></span></a> <a type="button"
 									onclick="return confirm('Are you sure?') ? true : false;"
 									class="btn btn-danger"
-									th:href="@{/deletecountry/{id}(id=${vehiculehire.id}) }"><span
+									th:href="@{/deletevehiculehire/{id}(id=${vehiculehire.id}) }"><span
 										class="fa fa-trash"></span></a></td>
                   </tr>
                  

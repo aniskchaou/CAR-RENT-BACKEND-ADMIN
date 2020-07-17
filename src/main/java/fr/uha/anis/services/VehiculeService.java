@@ -1,5 +1,7 @@
 package fr.uha.anis.services;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +33,9 @@ public class VehiculeService {
 	
 	public List<Vehicule> getVehicules()
 	{
-		return vehiculeRepository.findAll();
+		List<Vehicule> vehicules=vehiculeRepository.findAll();
+		 Collections.reverse(vehicules);
+		 return vehicules;
 	}
 	
 	public long getCount()

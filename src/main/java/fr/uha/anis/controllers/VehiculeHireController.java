@@ -70,7 +70,6 @@ public class VehiculeHireController {
 	@RequestMapping("/vehiculehire/{id}")
 	public String findById(@PathVariable("id") int id, Model model) {
 
-
 		List<Vehicule> vehicules = vehiculeService.getVehicules();
 		model.addAttribute("vehicules", vehicules);
 
@@ -79,7 +78,7 @@ public class VehiculeHireController {
 
 		List<Location> locations = locationService.getLocations();
 		model.addAttribute("locations", locations);
-		
+
 		VehiculeHire vehiculeHire = vehiculeHireService.findById(id).get();
 		model.addAttribute("vehiculeHire", vehiculeHire);
 		return "editHire";
@@ -92,11 +91,12 @@ public class VehiculeHireController {
 		vehiculeHireService.save(vehicule);
 		return "redirect:/vehiculeshire";
 	}
+
 //
-//@GetMapping("/deletevehicule/{id}")
-//@Transactional
-//public String deleteCountry(@PathVariable("id") int id) {
-//	vehiculeService.delete(id);
-//	return "redirect:/vehicules";
-//}
+	@GetMapping("/deletevehiculehire/{id}")
+	@Transactional
+	public String deleteCountry(@PathVariable("id") int id) {
+		vehiculeHireService.delete(id);
+		return "redirect:/vehiculehire";
+	}
 }
