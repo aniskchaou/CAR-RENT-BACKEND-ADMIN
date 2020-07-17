@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class User {
+public class Userss {
 		
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -39,13 +39,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public User(int id, String username, String password) {
+	public Userss(int id, String username, String password) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 	}
-	public User() {
+	public Userss() {
 		// TODO Auto-generated constructor stub
 	}
 	

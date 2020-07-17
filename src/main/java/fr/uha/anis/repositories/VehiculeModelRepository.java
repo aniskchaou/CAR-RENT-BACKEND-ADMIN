@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import fr.uha.anis.models.client.Supplier;
-import fr.uha.anis.models.user.User;
+import fr.uha.anis.models.user.Userss;
 import fr.uha.anis.models.vehicule.VehicleModel;
 
 @Repository

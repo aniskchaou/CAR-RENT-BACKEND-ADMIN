@@ -18,7 +18,7 @@ import fr.uha.anis.models.invoice.InvoiceStatus;
 import fr.uha.anis.models.person.Employee;
 import fr.uha.anis.models.person.EmployeeType;
 import fr.uha.anis.models.person.JobTitle;
-import fr.uha.anis.models.user.User;
+import fr.uha.anis.models.user.Userss;
 import fr.uha.anis.models.vehicule.VehicleModel;
 import fr.uha.anis.models.vehicule.VehicleStatus;
 import fr.uha.anis.models.vehicule.Vehicule;
@@ -111,8 +111,8 @@ public class CarFleetInitDB implements ICarFleetInit{
 
 	@Override
 	public void initUsers() {
-	User user =new User(1, "admin", "admin");
-	User user2 =new User(2, "user", "user");
+	Userss user =new Userss(1, "admin", "admin");
+	Userss user2 =new Userss(2, "user", "user");
 	userRepository.save(user);
 	userRepository.save(user2);
 	}

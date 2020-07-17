@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import fr.uha.anis.models.user.User;
+import fr.uha.anis.models.user.Userss;
 import fr.uha.anis.models.user.UserPrincipal;
 import fr.uha.anis.repositories.UserRepository;
 
@@ -17,7 +17,7 @@ public class MyUserDetailService implements UserDetailsService {
 	UserRepository userRepository;
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user=userRepository.findByUsername(username);
+		Userss user=userRepository.findByUsername(username);
 		
 		if(user==null)
 		{
