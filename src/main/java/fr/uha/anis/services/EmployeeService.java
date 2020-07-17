@@ -48,4 +48,9 @@ public class EmployeeService {
 		
 	}
 */
+
+	public void save(Employee e) {
+		// TODO Auto-generated method stub
+		employeeRepository.save(e);
+	}
 }

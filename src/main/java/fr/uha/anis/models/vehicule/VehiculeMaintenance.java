@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -35,7 +38,11 @@ public class VehiculeMaintenance {
 	private Vehicule vehicule;
 	private Integer vehicleid;
 	
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
 	
 	private Double price;

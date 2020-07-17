@@ -1,0 +1,68 @@
+
+<div th:fragment="add_vehicule_maintenance_form" class="modal-dialog"
+	role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Add new vehicule
+				maintenance</h5>
+		</div>
+		<div class="modal-body">
+			<form th:action="@{/addvehiculemaintenance}" method="post">
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Vehicule</label> <select
+						class="form-control" name="vehicleid"><option
+							th:each="vehicule:${vehicules}" th:text="${vehicule.name}"
+							th:value="${vehicule.id}"></option></select>
+
+
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Start Date</label> <input
+						name="startDate" type="date" class="form-control"
+						id="exampleInputEmail1" aria-describedby="emailHelp"
+						placeholder="Enter email">
+				</div>
+
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">End Date</label> <input
+						name="endDate" type="date" class="form-control"
+						id="exampleInputEmail1" aria-describedby="emailHelp"
+						placeholder="Enter email">
+				</div>
+
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Price</label> <input name="price"
+						type="number" class="form-control" id="exampleInputEmail1"
+						aria-describedby="emailHelp" placeholder="Price">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Supplier</label> <select
+						class="form-control" name="supplierid"><option
+							th:each="supplier:${suppliers}" th:text="${supplier.name}"
+							th:value="${supplier.id}"></option></select>
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Remarks</label>
+					<textarea name="remarks" type="text" class="form-control"
+						id="exampleInputEmail1" aria-describedby="emailHelp"
+						placeholder="Remarks"></textarea>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Create</button>
+
+
+			</form>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+		</div>
+	</div>
+</div>

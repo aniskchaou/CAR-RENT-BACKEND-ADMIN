@@ -88,7 +88,7 @@
                     <td th:text="${invoice.invoiceStatus.description}"></td>
                     <td th:text="${invoice.client.name}"></td>
                     <td th:text="${invoice.remarks}"></td>
-                    <td> <a type="button" class="btn btn-primary" th:href="@{/findbyid/{id}(id=${invoice.id}) }"><span class="fa fa-edit"></span></a>
+                    <td> <a type="button" class="btn btn-primary" th:href="@{/invoice/{id}(id=${invoice.id}) }"><span class="fa fa-edit"></span></a>
                      <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deletecountry/{id}(id=${invoice.id}) }"><span class="fa fa-trash"></span></a>
                     </td>
                   </tr>
@@ -103,7 +103,7 @@
      <div th:insert="footer :: footer"></div>
     
     
-    <div th:insert="addCountryForm :: add_country_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+    <div th:insert="addInvoiceForm :: add_invoice_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
    
 
 

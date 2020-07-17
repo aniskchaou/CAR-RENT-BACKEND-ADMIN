@@ -1,0 +1,57 @@
+
+<div th:fragment="add_invoice_form" class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Add new invoice</h5>
+		</div>
+		<div class="modal-body">
+			<form th:action="@{/addinvoice}" method="post">
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Invoice Date</label> <input
+						pattern="yyyy/MM/dd" name="invoiceDate" type="date"
+						class="form-control" id="exampleInputEmail1"
+						aria-describedby="emailHelp" placeholder="Enter email">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Invoice status</label> <select
+						class="form-control" name="invoicestatusid"><option
+							th:each="invoiceS:${invoicesStatus}"
+							th:text="${invoiceS.description}" th:value="${invoiceS.id}"></option></select>
+
+
+				</div>
+
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Client</label> <select
+						class="form-control" name="clientid"><option
+							th:each="client:${clients}" th:text="${client.name}"
+							th:value="${client.id}"></option></select>
+
+
+				</div>
+
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Remarks</label>
+					<textarea name="remarks" type="text" class="form-control"
+						id="exampleInputEmail1" aria-describedby="emailHelp"
+						placeholder="Reamrks"></textarea>
+				</div>
+
+
+
+				<button type="submit" class="btn btn-primary">Edit</button>
+
+
+			</form>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+		</div>
+	</div>
+</div>

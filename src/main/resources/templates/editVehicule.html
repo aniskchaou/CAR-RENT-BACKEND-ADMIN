@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template">
+<meta name="author" content="GeeksLabs">
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+<link rel="shortcut icon" href="img/favicon.png">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+	rel="stylesheet">
+<title>Car Fleet (Spring,Thymeleaf)</title>
+
+<!-- Bootstrap CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- bootstrap theme -->
+<link href="/css/bootstrap-theme.css" rel="stylesheet">
+<!--external css-->
+<!-- font icon -->
+<link href="/css/elegant-icons-style.css" rel="stylesheet" />
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
+<!-- full calendar css-->
+<link
+	href="/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css"
+	rel="stylesheet" />
+<link href="/assets/fullcalendar/fullcalendar/fullcalendar.css"
+	rel="stylesheet" />
+<!-- easy pie chart-->
+<link href="/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" href="/css/owl.carousel.css" type="text/css">
+<link href="/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+<!-- Custom styles -->
+<link rel="stylesheet" href="/css/fullcalendar.css">
+<link href="/css/widgets.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/style-responsive.css" rel="stylesheet" />
+<link href="/css/xcharts.min.css" rel=" stylesheet">
+<link href="/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+<!-- =======================================================
+    Theme Name: NiceAdmin
+    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+	<!-- container section start -->
+	<section id="container" class="">
+
+
+		<div th:insert="header :: header"></div>
+		<!--header end-->
+
+		<!--sidebar start-->
+		<div th:insert="sidebar :: sidebar"></div>
+		<!--sidebar end-->
+
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<!--overview start-->
+				<div class="row">
+					<div class="col-lg-12">
+						<h3 class="page-header">
+							<i class="fa fa-laptop"></i> Dashboard
+						</h3>
+						<ol class="breadcrumb">
+							<li><i class="fa fa-home"></i><a th:href="@{/index}">Home</a></li>
+							<li><i class="fa fa-laptop"></i>Dashboard</li>
+						</ol>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<form th:action="@{/updatevehicule/{id}(id=${vehicule.id})}"
+						th:object="${vehicule}" method="post">
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Vehicule</label> <select
+								class="form-control" name="vehicletypeid"><option
+									th:each="vehiculetype:${vehiculetypes}"
+									th:text="${vehiculetype.description}"
+									th:value="${vehiculetype.id}"></option></select>
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">vehicle Number</label> <input
+								name="vehicleNumber" type="number" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+								placeholder="vehicle Number"
+								th:value="${vehicule.vehicleNumber}">
+						</div>
+
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Registration Date</label> <input
+								name="registrationDate" type="date" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+								placeholder="Enter email">
+						</div>
+
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Acquisition Date</label> <input
+								name="acquisitionDate" type="date" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+								placeholder="Enter email">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Description</label>
+							<textarea name="description" type="text" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+								placeholder="Description" th:value="${vehicule.description}"></textarea>
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Power</label> <input name="power"
+								type="number" class="form-control" id="exampleInputEmail1"
+								aria-describedby="emailHelp" placeholder="Power" th:value="${vehicule.power}">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Fuel Capacity</label> <input
+								name="fuelCapacity" type="number" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+								placeholder="Power" th:value="${vehicule.fuelCapacity}">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Vehicle Status</label> <select
+								class="form-control" name="vehiclestatusid"><option
+									th:each="vehiculeS:${vehiculeStatus}"
+									th:text="${vehiculeS.description}" 
+									th:value="${vehiculeS.id}"></option></select>
+
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Net Weight</label> <input
+								name="netWeight" type="number" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+								placeholder="Net Weight" th:value="${vehicule.netWeight}">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Employee</label> <select
+								class="form-control" name="employeeid"><option
+									th:each="employee:${employees}" th:text="${employee.firstname}"
+									th:value="${employee.id}"></option></select>
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Vehicule Model</label> <select
+								class="form-control" name="vehiclemodelid"><option
+									th:each="vehiculemodel:${vehiculeModels}"
+									th:text="${vehiculemodel.description}"
+									th:value="${vehiculemodel.id}"></option></select>
+
+						</div>
+
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Location</label> <select
+								class="form-control" name="locationid"><option
+									th:each="location:${locations}"
+									th:text="${location.description}" th:value="${location.id}"></option></select>
+
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Remarks</label>
+							<textarea name="remarks" type="text" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+								placeholder="Remarks" th:value="${vehicule.remarks}"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Edit</button>
+
+
+					</form>
+
+				</div>
+
+
+			</section>
+
+
+
+		</section>
+		<!--main content end-->
+	</section>
+	<!-- container section start -->
+	<div th:insert="footer :: footer"></div>
+	<div th:insert="scripts :: scripts"></div>
+</body>
+
+</html>

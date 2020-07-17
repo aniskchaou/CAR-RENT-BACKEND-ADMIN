@@ -81,6 +81,7 @@
                      <th>Client</th>
                      <th>location</th>
                      <th>Price</th>
+                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -91,6 +92,13 @@
                     <td th:text="${vehiculehire.client.name}"></td>
                       <td th:text="${vehiculehire.location.city}"></td>
                     <td th:text="${vehiculehire.price}"></td>
+                    <td><a type="button" class="btn btn-primary"
+									th:href="@{/vehiculehire/{id}(id=${vehiculehire.id}) }"><span
+										class="fa fa-edit"></span></a> <a type="button"
+									onclick="return confirm('Are you sure?') ? true : false;"
+									class="btn btn-danger"
+									th:href="@{/deletecountry/{id}(id=${vehiculehire.id}) }"><span
+										class="fa fa-trash"></span></a></td>
                   </tr>
                  
                 </tbody>
@@ -103,7 +111,7 @@
      <div th:insert="footer :: footer"></div>
     
     
-    <div th:insert="addCountryForm :: add_country_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+    <div th:insert="addvehiculeHireForm :: add_vehicule_hire_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
    
 
 

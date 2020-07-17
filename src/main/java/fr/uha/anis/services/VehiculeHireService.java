@@ -33,12 +33,12 @@ public class VehiculeHireService {
 	{
 		return vehiculeHireRepository.findAll();
 	}
-	/*
-	public void save(Country country)
-	{
-		countryRepository.save(country);
-	}
 	
+	public void save(VehiculeHire hire)
+	{
+		vehiculeHireRepository.save(hire);
+	}
+	/*
 	public Optional<Country> findById(int id)
 	{
 		return countryRepository.findById(id);
@@ -51,4 +51,9 @@ public class VehiculeHireService {
 		
 	}
 */
+
+	public  Optional<VehiculeHire> findById(int id) {
+		// TODO Auto-generated method stub
+		return vehiculeHireRepository.findById(id);
+	}
 }

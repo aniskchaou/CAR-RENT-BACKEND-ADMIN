@@ -29,12 +29,12 @@ public class InvoiceService {
 	{
 		return invoiceRepository.findAll();
 	}
-	/*
-	public void save(Country country)
-	{
-		countryRepository.save(country);
-	}
 	
+	public void save(Invoice invoice)
+	{
+		invoiceRepository.save(invoice);
+	}
+	/*
 	public Optional<Country> findById(int id)
 	{
 		return countryRepository.findById(id);
@@ -47,4 +47,9 @@ public class InvoiceService {
 		
 	}
 */
+
+	public Invoice findById(int id) {
+		// TODO Auto-generated method stub
+		return invoiceRepository.findById(id).get();
+	}
 }

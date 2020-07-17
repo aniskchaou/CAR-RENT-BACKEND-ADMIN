@@ -80,7 +80,7 @@
                     <th>Email</th>
                     <th>Country</th>
                     <th>State</th>
-                  
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -91,7 +91,9 @@
                     <td th:text="${client.email}"></td>
                     <td th:text="${client.country.description}"></td>
                     <td th:text="${client.state.name}"></td>
-                   
+                    <td> <a type="button" class="btn btn-primary" th:href="@{/client/{id}(id=${client.id}) }"><span class="fa fa-edit"></span></a>
+                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deletecountry/{id}(id=${client.id}) }"><span class="fa fa-trash"></span></a>
+                    </td>
                   </tr>
                  
                 </tbody>
@@ -104,7 +106,7 @@
      <div th:insert="footer :: footer"></div>
     
     
-    <div th:insert="addCountryForm :: add_country_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+    <div th:insert="addClientForm :: add_client_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
    
 
 

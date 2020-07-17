@@ -4,48 +4,44 @@
         <h5 class="modal-title" id="exampleModalLabel">Add new state</h5>
       </div>
       <div class="modal-body">
-      <form th:action="@{/addcountry}" method="post">
+      <form th:action="@{/addstate}" method="post">
       
    <div class="form-group">
-    <label for="exampleInputEmail1">Description</label>
-    <input name="description" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="exampleInputEmail1">Name</label>
+    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
   </div>
   
    <div class="form-group">
     <label for="exampleInputEmail1">Capital</label>
-    <input name="capital" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input name="capital" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Capital">
   </div>
   
   
    <div class="form-group">
     <label for="exampleInputEmail1">Code</label>
-    <input name="code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input name="code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Code">
   </div>
   
   
    <div class="form-group">
-    <label for="exampleInputEmail1">Continent</label>
-    <input name="continent" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="exampleInputEmail1">Country</label>
+   <select class="form-control" name="countryid"><option th:each="country:${countries}" th:text="${country.description}" th:value="${country.id}"></option></select>
+
   </div>
   
    <div class="form-group">
-    <label for="exampleInputEmail1">Nationality</label>
-    <input name="nationality" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="exampleInputEmail1">Details</label>
+    <textarea name="details" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Details"></textarea>
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Create</button>
 
 
 </form>
 
 </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
       </div>
     </div>

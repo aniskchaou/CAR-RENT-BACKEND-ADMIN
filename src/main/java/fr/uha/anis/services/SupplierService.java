@@ -29,17 +29,17 @@ public class SupplierService {
 	{
 		return supplierRepository.count();
 	}
-/*	
-	public void save(Country country)
+
+	public void save(Supplier supplier)
 	{
-		countryRepository.save(country);
+		supplierRepository.save(supplier);
 	}
 	
-	public Optional<Country> findById(int id)
+	public Optional<Supplier> findById(int id)
 	{
-		return countryRepository.findById(id);
+		return supplierRepository.findById(id);
 	}
-	
+	/*
 	public void delete(int id)
 	{
 		

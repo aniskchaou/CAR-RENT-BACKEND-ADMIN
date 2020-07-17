@@ -80,7 +80,6 @@
                     <th>Country</th>
                     <th>State</th>
                     <th>City</th>
-                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -90,9 +89,7 @@
                     <td th:text="${location.country.description}"></td>
                     <td th:text="${location.state.name}"></td>
                     <td th:text="${location.city}"></td>
-                    <td> <a type="button" class="btn btn-primary" th:href="@{/findbyid/{id}(id=${location.id}) }"><span class="fa fa-edit"></span></a>
-                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deletecountry/{id}(id=${location.id}) }"><span class="fa fa-trash"></span></a>
-                    </td>
+                    
                   </tr>
                  
                 </tbody>

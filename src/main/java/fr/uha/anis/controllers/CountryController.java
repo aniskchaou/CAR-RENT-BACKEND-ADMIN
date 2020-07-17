@@ -49,7 +49,7 @@ public class CountryController {
 		
 	 Country country=countryService.findById(id).get();
 	 model.addAttribute("country", country);
-	 return "editCountryForm";
+	 return "editCountry";
 	}
 	
 	@PostMapping("/updatecountry/{id}")

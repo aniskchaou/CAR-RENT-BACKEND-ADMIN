@@ -22,4 +22,12 @@ public class LocationService {
 	{
 		return locationRepository.findAll();
 	}
+
+
+
+	public void save(Location location) {
+		// TODO Auto-generated method stub
+		locationRepository.save(location);
+		
+	}
 }

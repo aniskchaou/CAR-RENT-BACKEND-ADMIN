@@ -33,17 +33,17 @@ public class VehiculeMaintenanceService {
 	{
 		return vehiculeMaintenanceRepository.findAll();
 	}
+	
+	public void save(VehiculeMaintenance m)
+	{
+		vehiculeMaintenanceRepository.save(m);
+	}
+	
+	public Optional<VehiculeMaintenance> findById(int id)
+	{
+		return vehiculeMaintenanceRepository.findById(id);
+	}
 	/*
-	public void save(Country country)
-	{
-		countryRepository.save(country);
-	}
-	
-	public Optional<Country> findById(int id)
-	{
-		return countryRepository.findById(id);
-	}
-	
 	public void delete(int id)
 	{
 		

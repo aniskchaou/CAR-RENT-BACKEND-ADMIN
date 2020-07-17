@@ -1,0 +1,93 @@
+ <div  th:fragment="add_vehicule_form" class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new vehicule</h5>
+      </div>
+		
+		
+
+      <div class="modal-body">
+      <form th:action="@{/addvehicule}" method="post">
+      
+   <div class="form-group">
+    <label for="exampleInputEmail1">Vehicule</label>
+    <select class="form-control" name="vehicletypeid"><option th:each="vehiculetype:${vehiculetypes}" th:text="${vehiculetype.description}" th:value="${vehiculetype.id}"></option></select>
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">vehicle Number</label>
+    <input name="vehicleNumber" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="vehicle Number">
+  </div>
+  
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">Registration Date</label>
+    <input name="registrationDate" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">Acquisition Date</label>
+    <input name="acquisitionDate" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <textarea name="description" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Description"></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Power</label>
+    <input name="power" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Power">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Fuel Capacity</label>
+    <input name="fuelCapacity" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Power">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Vehicle Status</label>
+         <select class="form-control" name="vehiclestatusid"><option th:each="vehiculeS:${vehiculeStatus}" th:text="${vehiculeS.description}" th:value="${vehiculeS.id}"></option></select>
+    
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Net Weight</label>
+    <input name="netWeight" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Net Weight">
+  </div>
+  
+  <div class="form-group">
+    <label  for="exampleInputEmail1">Employee</label>
+     <select class="form-control" name="employeeid"><option th:each="employee:${employees}" th:text="${employee.firstname}" th:value="${employee.id}"></option></select>
+     </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Vehicule Model</label>
+    <select class="form-control" name="vehiclemodelid"><option th:each="vehiculemodel:${vehiculeModels}" th:text="${vehiculemodel.description}" th:value="${vehiculemodel.id}"></option></select>
+    
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Location</label>
+          <select class="form-control" name="locationid"><option th:each="location:${locations}" th:text="${location.description}" th:value="${location.id}"></option></select>
+     
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Remarks</label>
+    <textarea name="remarks" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Remarks"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+
+
+</form>
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+      </div>
+</div>
+  </div>

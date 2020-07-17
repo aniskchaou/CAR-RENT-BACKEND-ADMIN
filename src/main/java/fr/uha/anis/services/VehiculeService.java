@@ -38,22 +38,24 @@ public class VehiculeService {
 	{
 		return vehiculeRepository.count();
 	}
-	/*
-	public void save(Country country)
+
+	public void save(Vehicule vehicule)
 	{
-		countryRepository.save(country);
+		vehiculeRepository.save(vehicule);
 	}
 	
-	public Optional<Country> findById(int id)
+	public Optional<Vehicule> findById(int id)
 	{
-		return countryRepository.findById(id);
+		return vehiculeRepository.findById(id);
 	}
 	
 	public void delete(int id)
 	{
 		
-		countryRepository.delete(countryRepository.getOne(id));
+		vehiculeRepository.delete(vehiculeRepository.getOne(id));
 		
 	}
-*/
+
+
+	
 }

@@ -28,12 +28,12 @@ public class ClientService {
 	{
 		return clientRepository.count();
 	}
-/*	
-	public void save(Country country)
+
+	public void save(Client client)
 	{
-		countryRepository.save(country);
+		clientRepository.save(client);
 	}
-	
+/*	
 	public Optional<Country> findById(int id)
 	{
 		return countryRepository.findById(id);
@@ -46,4 +46,9 @@ public class ClientService {
 		
 	}
 */
+
+	public Optional<Client> findById(int id) {
+		// TODO Auto-generated method stub
+		return clientRepository.findById(id);
+	}
 }

@@ -31,7 +31,7 @@ public class Country {
 	private String nationality;
 	private String continent;
 	
-	@OneToMany(mappedBy="country", cascade = CascadeType.REMOVE, orphanRemoval=true)
+	@OneToMany(mappedBy="country")
 	private List<State> states;
 
 	public Integer getId() {
