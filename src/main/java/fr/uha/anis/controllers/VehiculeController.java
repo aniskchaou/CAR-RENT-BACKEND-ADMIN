@@ -66,7 +66,7 @@ public class VehiculeController {
 
 	@PostMapping("/addvehicule")
 
-	public String addCountry(Vehicule v) {
+	public String addVehicule(Vehicule v) {
 		vehiculeService.save(v);
 		return "redirect:/vehicules";
 	}
@@ -89,7 +89,7 @@ public class VehiculeController {
 	}
 
 	@PostMapping("/updatevehicule/{id}")
-	public String updateCountry(@PathVariable("id") long id, @Validated Vehicule vehicule, BindingResult result,
+	public String updateVehicule(@PathVariable("id") long id, @Validated Vehicule vehicule, BindingResult result,
 			Model model) {
 
 		vehiculeService.save(vehicule);
@@ -97,8 +97,8 @@ public class VehiculeController {
 	}
 	@GetMapping("/deletevehicule/{id}")
 	@Transactional
-	public String deleteCountry(@PathVariable("id") int id) {
-		vehiculeService.delete(id);
+	public String deleteVehicule(@PathVariable("id") int id) {
+		vehiculeService.deleteById(id);
 		return "redirect:/vehicules";
 	}
 }

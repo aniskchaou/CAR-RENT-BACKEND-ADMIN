@@ -43,9 +43,9 @@ public class VehiculeService {
 		return vehiculeRepository.count();
 	}
 
-	public void save(Vehicule vehicule)
+	public Vehicule save(Vehicule vehicule)
 	{
-		vehiculeRepository.save(vehicule);
+		return vehiculeRepository.save(vehicule);
 	}
 	
 	public Optional<Vehicule> findById(int id)
@@ -53,7 +53,7 @@ public class VehiculeService {
 		return vehiculeRepository.findById(id);
 	}
 	
-	public void delete(int id)
+	public void deleteById(int id)
 	{
 		
 		vehiculeRepository.delete(vehiculeRepository.getOne(id));
