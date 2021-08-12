@@ -1,54 +1,62 @@
- <div  th:fragment="add_location_form" class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add new location</h5>
-      </div>
-      <div class="modal-body">
+<div th:fragment="add_location_form" class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Add new location</h5>
+    </div>
+    <div class="modal-body">
       <form th:action="@{/addlocation}" method="post">
-  
-   <div class="form-group">
-    <label for="exampleInputEmail1">Description</label>
-    <textarea name="description" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Description"></textarea>
-  </div>
-  
-   <div class="form-group">
-    <label for="exampleInputEmail1">Details</label>
-    <textarea name="details" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deatils"></textarea>
-  </div>
-  
-  
-   <div class="form-group">
-    <label for="exampleInputEmail1">Country</label>
-    <select class="form-control" name="countryid"><option th:each="country:${countries}" th:text="${country.description}" th:value="${country.id}"></option></select>
-    
-  </div>
-  
-  
-   <div class="form-group">
-    <label for="exampleInputEmail1">State</label>
-    <select class="form-control" name="stateid"><option th:each="state:${states}" th:text="${state.name}" th:value="${state.id}"></option></select>
-    
-  </div>
-  
-   <div class="form-group">
-    <label for="exampleInputEmail1">City</label>
-    <input name="city" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="City">
-  </div>
-  
-   <div class="form-group">
-    <label for="exampleInputEmail1">Address</label>
-    <input name="address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Create</button>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Description</label>
+          <textarea name="description" type="text" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Details</label>
+          <textarea name="details" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Deatils"></textarea>
+        </div>
 
 
-</form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Country</label>
+          <select class="form-control" name="countryid">
+            <option th:each="country:${countries}" th:text="${country.description}" th:value="${country.id}"></option>
+          </select>
 
-</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
 
-      </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">State</label>
+          <select class="form-control" name="stateid">
+            <option th:each="state:${states}" th:text="${state.name}" th:value="${state.id}"></option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">City</label>
+          <input name="city" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="City">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Address</label>
+          <input name="address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Address">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+
+
+      </form>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
     </div>
   </div>
+</div>

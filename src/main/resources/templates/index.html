@@ -8,7 +8,7 @@
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <title>Car Fleet (Spring,Thymeleaf)</title>
 
   <!-- Bootstrap CSS -->
@@ -47,11 +47,11 @@
   <section id="container" class="">
 
 
-<div th:insert="header :: header"></div>
+    <div th:insert="header :: header"></div>
     <!--header end-->
 
     <!--sidebar start-->
-<div th:insert="sidebar :: sidebar"></div>
+    <div th:insert="sidebar :: sidebar"></div>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -101,8 +101,8 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box green-bg">
-                 <i class="fa fa-car" aria-hidden="true"></i>
-               <div class="count" th:text="${vehicule_nb}"></div>
+              <i class="fa fa-car" aria-hidden="true"></i>
+              <div class="count" th:text="${vehicule_nb}"></div>
               <div class="title">Vehicules</div>
             </div>
             <!--/.info-box-->
@@ -131,14 +131,14 @@
 
       </section>
       <div class="text-right">
-  <div th:insert="footer :: footer"></div>
-    
+        <div th:insert="footer :: footer"></div>
+
     </section>
     <!--main content end-->
   </section>
   <!-- container section start -->
 
-<div th:insert="scripts :: scripts"></div>
+  <div th:insert="scripts :: scripts"></div>
 </body>
 
 </html>

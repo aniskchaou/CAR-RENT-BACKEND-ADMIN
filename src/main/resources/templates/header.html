@@ -1,47 +1,48 @@
+<header class="header dark-bg" th:fragment="header">
+  <div class="toggle-nav">
+    <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i
+        class="icon_menu"></i></div>
+  </div>
 
-    <header class="header dark-bg"  th:fragment="header">
-      <div class="toggle-nav">
-        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-      </div>
-
-      <!--logo start-->
-      <a th:href="@{/index}" class="logo">Car <span class="lite">Rental </span> App</a>
-      <!--logo end-->
+  <!--logo start-->
+  <a th:href="@{/index}" class="logo">Car <span class="lite">Rental </span> App</a>
+  <!--logo end-->
 
 
 
-      <div class="top-nav notification-row">
-        <!-- notificatoin dropdown start-->
-        <ul class="nav pull-right top-menu">
+  <div class="top-nav notification-row">
+    <!-- notificatoin dropdown start-->
+    <ul class="nav pull-right top-menu">
 
-          <!-- inbox notificatoin end -->
-          <!-- alert notification start-->
+      <!-- inbox notificatoin end -->
+      <!-- alert notification start-->
 
-          <!-- alert notification end-->
-          <!-- user login dropdown start-->
-          <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img height="35" width="35" alt="" th:src="@{'img/'+${#authentication.getPrincipal().getUsername()}+'.png'}">
-                            </span>
-                            <span class="username" th:text="${#authentication.getPrincipal().getUsername()}">Jenifer Smith</span>
-                            <b class="caret"></b>
-                        </a>
-            <ul class="dropdown-menu extended logout">
-              <div class="log-arrow-up"></div>
-              <li class="eborder-top">
-                <a th:href="@{/profile}"><i class="icon_profile"></i> My Profile</a>
-              </li>
-              
-              <li>
-                <a th:href="@{/logout}"><i class="icon_key_alt"></i> Log Out</a>
-              </li>
-              
-             
-            </ul>
+      <!-- alert notification end-->
+      <!-- user login dropdown start-->
+      <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+          <span class="profile-ava">
+            <img height="35" width="35" alt=""
+              th:src="@{'img/'+${#authentication.getPrincipal().getUsername()}+'.png'}">
+          </span>
+          <span class="username" th:text="${#authentication.getPrincipal().getUsername()}">Jenifer Smith</span>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu extended logout">
+          <div class="log-arrow-up"></div>
+          <li class="eborder-top">
+            <a th:href="@{/profile}"><i class="icon_profile"></i> My Profile</a>
           </li>
-          <!-- user login dropdown end -->
+
+          <li>
+            <a th:href="@{/logout}"><i class="icon_key_alt"></i> Log Out</a>
+          </li>
+
+
         </ul>
-        <!-- notificatoin dropdown end-->
-      </div>
-    </header>
+      </li>
+      <!-- user login dropdown end -->
+    </ul>
+    <!-- notificatoin dropdown end-->
+  </div>
+</header>

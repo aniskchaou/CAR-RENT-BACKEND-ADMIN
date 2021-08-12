@@ -23,7 +23,8 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
   <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -31,7 +32,7 @@
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
 
-    <!-- =======================================================
+  <!-- =======================================================
       Theme Name: NiceAdmin
       Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
       Author: BootstrapMade
@@ -44,11 +45,11 @@
   <section id="container" class="">
     <!--header start-->
 
-   <div th:insert="header :: header"></div>
+    <div th:insert="header :: header"></div>
     <!--header end-->
 
     <!--sidebar start-->
-<div th:insert="sidebar :: sidebar"></div>
+    <div th:insert="sidebar :: sidebar"></div>
     <!--sidebar end-->
     <!--sidebar end-->
 
@@ -61,50 +62,53 @@
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a th:href="@{/index}">Home</a></li>
               <li>Accounts </li>
-               <li>Invoices </li>
-              
+              <li>Invoices </li>
+
             </ol>
           </div>
         </div>
         <!-- page start-->
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-        <span class="fa fa-plus"></span>
-       </button>
-       <br><br>
+          <span class="fa fa-plus"></span>
+        </button>
+        <br><br>
         <section class="panel">
-               <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Client</th>
-                    <th>Remarks</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr  th:each="invoice:${invoices}">
-                    <td th:text="${ #dates.format(invoice.invoiceDate, 'dd-MMM-yyyy')}"></td>
-                    <td th:text="${invoice.invoiceStatus.description}"></td>
-                    <td th:text="${invoice.client.name}"></td>
-                    <td th:text="${invoice.remarks}"></td>
-                    <td> <a type="button" class="btn btn-primary" th:href="@{/invoice/{id}(id=${invoice.id}) }"><span class="fa fa-edit"></span></a>
-                     <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger" th:href="@{/deleteinvoice/{id}(id=${invoice.id}) }"><span class="fa fa-trash"></span></a>
-                    </td>
-                  </tr>
-                 
-                </tbody>
-              </table>
-            </section>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Client</th>
+                <th>Remarks</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="invoice:${invoices}">
+                <td th:text="${ #dates.format(invoice.invoiceDate, 'dd-MMM-yyyy')}"></td>
+                <td th:text="${invoice.invoiceStatus.description}"></td>
+                <td th:text="${invoice.client.name}"></td>
+                <td th:text="${invoice.remarks}"></td>
+                <td> <a type="button" class="btn btn-primary" th:href="@{/invoice/{id}(id=${invoice.id}) }"><span
+                      class="fa fa-edit"></span></a>
+                  <a type="button" onclick="return confirm('Are you sure?') ? true : false;" class="btn btn-danger"
+                    th:href="@{/deleteinvoice/{id}(id=${invoice.id}) }"><span class="fa fa-trash"></span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </section>
         <!-- page end-->
       </section>
     </section>
     <!--main content end-->
-     <div th:insert="footer :: footer"></div>
-    
-    
-    <div th:insert="addInvoiceForm :: add_invoice_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
-   
+    <div th:insert="footer :: footer"></div>
+
+
+    <div th:insert="addInvoiceForm :: add_invoice_form" class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+
 
 
 
@@ -119,7 +123,9 @@
   <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
   <!--custome script for all page-->
   <script src="js/scripts.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
 
 </body>
 

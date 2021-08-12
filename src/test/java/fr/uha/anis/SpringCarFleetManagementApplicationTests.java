@@ -9,30 +9,21 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
-import fr.uha.anis.models.vehicule.Vehicule;
-import fr.uha.anis.repositories.EmployeeRepository;
-import fr.uha.anis.repositories.LocationRepository;
-import fr.uha.anis.repositories.VehiculeModelRepository;
-import fr.uha.anis.repositories.VehiculeRepository;
-import fr.uha.anis.repositories.VehiculeStatusRepository;
-import fr.uha.anis.repositories.VehiculeTypeRepository;
-import fr.uha.anis.services.EmployeeService;
-import fr.uha.anis.services.LocationService;
-import fr.uha.anis.services.VehiculeModelService;
-import fr.uha.anis.services.VehiculeService;
-import fr.uha.anis.services.VehiculeStatusService;
-import fr.uha.anis.services.VehiculeTypeService;
+import delta.dev.software.models.vehicule.Vehicule;
+import delta.dev.software.repositories.EmployeeRepository;
+import delta.dev.software.repositories.LocationRepository;
+import delta.dev.software.repositories.VehiculeModelRepository;
+import delta.dev.software.repositories.VehiculeRepository;
+import delta.dev.software.repositories.VehiculeStatusRepository;
+import delta.dev.software.repositories.VehiculeTypeRepository;
+import delta.dev.software.services.VehiculeService;
 
 @SpringBootTest
 class SpringCarFleetManagementApplicationTests {

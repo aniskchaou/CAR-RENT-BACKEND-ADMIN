@@ -15,7 +15,8 @@
   <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
   <script src="/js/owl.carousel.js"></script>
   <!-- jQuery full calendar -->
-  <<script src="/js/fullcalendar.min.js"></script>
+  <<script src="/js/fullcalendar.min.js">
+    </script>
     <!-- Full Google Calendar - Calendar -->
     <script src="assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
@@ -42,16 +43,16 @@
     <script src="/js/jquery.slimscroll.min.js"></script>
     <script>
       //knob
-      $(function() {
+      $(function () {
         $(".knob").knob({
-          'draw': function() {
+          'draw': function () {
             $(this.i).val(this.cv + '%')
           }
         })
       });
 
       //carousel
-      $(document).ready(function() {
+      $(document).ready(function () {
         $("#owl-slider").owlCarousel({
           navigation: true,
           slideSpeed: 300,
@@ -63,12 +64,12 @@
 
       //custom select box
 
-      $(function() {
+      $(function () {
         $('select.styled').customSelect();
       });
 
       /* ---------- Map ---------- */
-      $(function() {
+      $(function () {
         $('#map').vectorMap({
           map: 'world_mill_en',
           series: {
@@ -79,10 +80,10 @@
             }]
           },
           backgroundColor: '#eef3f7',
-          onLabelShow: function(e, el, code) {
+          onLabelShow: function (e, el, code) {
             el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
           }
         });
       });
     </script>
-</div>    
+</div>
